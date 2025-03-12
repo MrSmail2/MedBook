@@ -22,8 +22,19 @@ namespace MedicalReference
         {
             try
             {
-                string json = File.ReadAllText(@"C:\Users\ivang\source\repos\MedList\MedList\Zabolevania\output_finish.json");
+                string path = Path.Combine("Zabolevania", "zabolevania.json");
+
+                // Проверяем, существует ли файл
+                if (!File.Exists(path))
+                {
+                    MessageBox.Show("Файл diseases.json не найден.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Читаем файл
+                string json = File.ReadAllText(path);
                 diseases = JsonConvert.DeserializeObject<List<Disease>>(json);
+               
 
                 foreach (var disease in diseases)
                 {
