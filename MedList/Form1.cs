@@ -97,6 +97,45 @@ namespace MedicalReference
                 textBoxSearchSymptoms.ForeColor = SystemColors.WindowText;
             }
         }
+        private void UpdateDiseasesListBox()
+        {
+            // Очищаем ListBox
+            listBoxDiseases.Items.Clear();
+
+            // Добавляем болезни в ListBox
+            foreach (var disease in diseases)
+            {
+                listBoxDiseases.Items.Add(disease.FirstHeader);
+            }
+        }
+
+        private void SortDiseasesAZ()
+        {
+            // Сортируем список болезней по названию (от А до Я)
+            diseases.Sort((d1, d2) => string.Compare(d1.FirstHeader, d2.FirstHeader, StringComparison.OrdinalIgnoreCase));
+
+            // Обновляем ListBox
+            UpdateDiseasesListBox();
+        }
+
+        private void SortDiseasesZA()
+        {
+            // Сортируем список болезней по названию (от Я до А)
+            diseases.Sort((d1, d2) => string.Compare(d2.FirstHeader, d1.FirstHeader, StringComparison.OrdinalIgnoreCase));
+
+            // Обновляем ListBox
+            UpdateDiseasesListBox();
+        }
+
+        private void buttonSortAZ_Click(object sender, EventArgs e)
+        {
+            SortDiseasesAZ();
+        }
+
+        private void buttonSortZA_Click(object sender, EventArgs e)
+        {
+            SortDiseasesZA();
+        }
     }
 }
     
