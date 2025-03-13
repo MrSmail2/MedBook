@@ -35,6 +35,7 @@
             this.сортировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.аЯToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.яАToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.калькуляторИМТToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(249, 10);
+            this.button1.Location = new System.Drawing.Point(239, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -72,10 +73,11 @@
             this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сортировкаToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(343, 6);
+            this.сортировкаToolStripMenuItem,
+            this.калькуляторИМТToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(345, 6);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(213, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(211, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -101,6 +103,13 @@
             this.яАToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.яАToolStripMenuItem.Text = "Я-А";
             this.яАToolStripMenuItem.Click += new System.EventHandler(this.buttonSortZA_Click);
+            // 
+            // калькуляторИМТToolStripMenuItem
+            // 
+            this.калькуляторИМТToolStripMenuItem.Name = "калькуляторИМТToolStripMenuItem";
+            this.калькуляторИМТToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
+            this.калькуляторИМТToolStripMenuItem.Text = "Калькулятор ИМТ";
+            this.калькуляторИМТToolStripMenuItem.Click += new System.EventHandler(this.buttonBMICalculator_Click);
             // 
             // MainForm
             // 
@@ -130,6 +139,7 @@
         private System.Windows.Forms.ToolStripMenuItem сортировкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem аЯToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem яАToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem калькуляторИМТToolStripMenuItem;
     }
 }
 

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Runtime.Remoting.Lifetime;
 using System.Windows.Forms;
+using MedList;
 using Newtonsoft.Json;
 
 namespace MedicalReference
@@ -136,7 +137,14 @@ namespace MedicalReference
         {
             SortDiseasesZA();
         }
+        private void buttonBMICalculator_Click(object sender, EventArgs e)
+        {
+            // Создаем и открываем форму калькулятора ИМТ
+            BMICalculatorForm bmiForm = new BMICalculatorForm();
+            bmiForm.ShowDialog();
+        }
     }
+
 }
     
     public class DiseaseData
