@@ -12,11 +12,14 @@ namespace MedicalReference
     public partial class MainForm : Form
     {
         private List<Disease> diseases;
+        private List<SearchHistoryItem> searchHistory = new List<SearchHistoryItem>(); // История поиска
 
         public MainForm()
         {
             InitializeComponent();
             LoadDiseases();
+            listBoxSearchHistory.Visible = false;
+            buttonBackToDiseases.Visible = false;
         }
 
         private void LoadDiseases()
@@ -35,7 +38,8 @@ namespace MedicalReference
                 // Читаем файл
                 string json = File.ReadAllText(path);
                 diseases = JsonConvert.DeserializeObject<List<Disease>>(json);
-               
+                
+                LoadSearchHistory();
 
                 foreach (var disease in diseases)
                 {
@@ -70,7 +74,16 @@ namespace MedicalReference
         {
             // Получаем введенные симптомы
             string searchText = textBoxSearchSymptoms.Text.ToLower(); // Приводим к нижнему регистру для удобства поиска
+            
+            if (string.IsNullOrWhiteSpace(searchText) || searchText == "поиск по симптомам")
+            {
+                UpdateDiseasesListBox(); // Обновляем ListBox с полным списком заболеваний
+                return;
+            }
 
+            // Добавляем запись в историю поиска
+            searchHistory.Add(new SearchHistoryItem(searchText, DateTime.Now));
+            SaveSearchHistory();
             // Очищаем ListBox перед поиском
             listBoxDiseases.Items.Clear();
 
@@ -143,9 +156,101 @@ namespace MedicalReference
             BMICalculatorForm bmiForm = new BMICalculatorForm();
             bmiForm.ShowDialog();
         }
-    }
+        public class SearchHistoryItem
+        {
+            public string Symptoms { get; set; } // Симптомы
+            public DateTime SearchTime { get; set; } // Время поиска
 
+            public SearchHistoryItem(string symptoms, DateTime searchTime)
+            {
+                Symptoms = symptoms;
+                SearchTime = searchTime;
+            }
+
+            // Переопределяем ToString для удобного вывода
+            public override string ToString()
+            {
+                return $"{SearchTime:yyyy-MM-dd HH:mm:ss}: {Symptoms}";
+            }
+        }
+        private void buttonShowHistory_Click(object sender, EventArgs e)
+        {
+            // Скрываем основной ListBox
+            listBoxDiseases.Visible = false;
+
+            // Показываем ListBox с историей поиска
+            listBoxSearchHistory.Visible = true;
+
+            // Показываем кнопку "Вернуться к списку болезней"
+            buttonBackToDiseases.Visible = true;
+
+            // Очищаем ListBox с историей поиска
+            listBoxSearchHistory.Items.Clear();
+
+            // Добавляем историю поиска в ListBox
+            foreach (var item in searchHistory)
+            {
+                listBoxSearchHistory.Items.Add(item.ToString());
+            }
+        }
+
+        private void buttonBackToDiseases_Click(object sender, EventArgs e)
+        {
+            // Скрываем ListBox с историей поиска
+            listBoxSearchHistory.Visible = false;
+
+            // Показываем основной ListBox
+            listBoxDiseases.Visible = true;
+
+            // Скрываем кнопку "Вернуться к списку болезней"
+            buttonBackToDiseases.Visible = false;
+        }
+        private void LoadSearchHistory()
+        {
+            try
+            {
+                // Путь к файлу с историей поиска
+                string path = Path.Combine("Zabolevania", "searchHistory.json");
+
+                // Проверяем, существует ли файл
+                if (!File.Exists(path))
+                {
+                    return; // Файл не существует, пропускаем загрузку
+                }
+
+                // Читаем JSON из файла
+                string json = File.ReadAllText(path);
+
+                // Десериализуем JSON в список истории поиска
+                searchHistory = JsonConvert.DeserializeObject<List<SearchHistoryItem>>(json);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при загрузке истории поиска: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SaveSearchHistory()
+        {
+            try
+            {
+                // Путь к файлу с историей поиска
+                string path = Path.Combine("Zabolevania", "searchHistory.json");
+
+                // Сериализуем историю поиска в JSON
+                string json = JsonConvert.SerializeObject(searchHistory, Formatting.Indented);
+
+                // Сохраняем JSON в файл
+                File.WriteAllText(path, json);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка при сохранении истории поиска: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    }
 }
+
     
     public class DiseaseData
     {

@@ -36,6 +36,9 @@
             this.аЯToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.яАToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.калькуляторИМТToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listBoxSearchHistory = new System.Windows.Forms.ListBox();
+            this.buttonBackToDiseases = new System.Windows.Forms.Button();
+            this.историяПоискаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +54,7 @@
             // textBoxSearchSymptoms
             // 
             this.textBoxSearchSymptoms.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBoxSearchSymptoms.Location = new System.Drawing.Point(12, 10);
+            this.textBoxSearchSymptoms.Location = new System.Drawing.Point(-1, 9);
             this.textBoxSearchSymptoms.Name = "textBoxSearchSymptoms";
             this.textBoxSearchSymptoms.Size = new System.Drawing.Size(221, 20);
             this.textBoxSearchSymptoms.TabIndex = 1;
@@ -60,7 +63,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(239, 8);
+            this.button1.Location = new System.Drawing.Point(237, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -74,10 +77,11 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сортировкаToolStripMenuItem,
-            this.калькуляторИМТToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(345, 6);
+            this.калькуляторИМТToolStripMenuItem,
+            this.историяПоискаToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(581, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(211, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(319, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -93,14 +97,14 @@
             // аЯToolStripMenuItem
             // 
             this.аЯToolStripMenuItem.Name = "аЯToolStripMenuItem";
-            this.аЯToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.аЯToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.аЯToolStripMenuItem.Text = "А-Я";
             this.аЯToolStripMenuItem.Click += new System.EventHandler(this.buttonSortAZ_Click);
             // 
             // яАToolStripMenuItem
             // 
             this.яАToolStripMenuItem.Name = "яАToolStripMenuItem";
-            this.яАToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.яАToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.яАToolStripMenuItem.Text = "Я-А";
             this.яАToolStripMenuItem.Click += new System.EventHandler(this.buttonSortZA_Click);
             // 
@@ -111,15 +115,42 @@
             this.калькуляторИМТToolStripMenuItem.Text = "Калькулятор ИМТ";
             this.калькуляторИМТToolStripMenuItem.Click += new System.EventHandler(this.buttonBMICalculator_Click);
             // 
+            // listBoxSearchHistory
+            // 
+            this.listBoxSearchHistory.FormattingEnabled = true;
+            this.listBoxSearchHistory.Location = new System.Drawing.Point(-1, 37);
+            this.listBoxSearchHistory.Name = "listBoxSearchHistory";
+            this.listBoxSearchHistory.Size = new System.Drawing.Size(928, 498);
+            this.listBoxSearchHistory.TabIndex = 4;
+            // 
+            // buttonBackToDiseases
+            // 
+            this.buttonBackToDiseases.Location = new System.Drawing.Point(765, 492);
+            this.buttonBackToDiseases.Name = "buttonBackToDiseases";
+            this.buttonBackToDiseases.Size = new System.Drawing.Size(135, 28);
+            this.buttonBackToDiseases.TabIndex = 5;
+            this.buttonBackToDiseases.Text = "Назад";
+            this.buttonBackToDiseases.UseVisualStyleBackColor = true;
+            this.buttonBackToDiseases.Click += new System.EventHandler(this.buttonBackToDiseases_Click);
+            // 
+            // историяПоискаToolStripMenuItem
+            // 
+            this.историяПоискаToolStripMenuItem.Name = "историяПоискаToolStripMenuItem";
+            this.историяПоискаToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
+            this.историяПоискаToolStripMenuItem.Text = "История поиска";
+            this.историяПоискаToolStripMenuItem.Click += new System.EventHandler(this.buttonShowHistory_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(924, 532);
+            this.Controls.Add(this.buttonBackToDiseases);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxSearchSymptoms);
-            this.Controls.Add(this.listBoxDiseases);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.listBoxSearchHistory);
+            this.Controls.Add(this.listBoxDiseases);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Список болезней";
@@ -140,6 +171,9 @@
         private System.Windows.Forms.ToolStripMenuItem аЯToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem яАToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem калькуляторИМТToolStripMenuItem;
+        private System.Windows.Forms.ListBox listBoxSearchHistory;
+        private System.Windows.Forms.Button buttonBackToDiseases;
+        private System.Windows.Forms.ToolStripMenuItem историяПоискаToolStripMenuItem;
     }
 }
 
