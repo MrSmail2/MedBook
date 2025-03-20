@@ -17,6 +17,8 @@ namespace MedList
         {
             InitializeComponent();
 
+            ApplyFontToControls(AppSettings.AppFont);
+
             dataGridView1.ReadOnly = true;
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
@@ -41,6 +43,19 @@ namespace MedList
 
 
 
+        }
+        private void ApplyFontToControls(Font font)
+        {
+            // Применяем шрифт к TextBox
+            textBoxWeight.Font = font;
+            textBoxHeight.Font = font;
+
+            // Применяем шрифт к Label
+          
+            labelResult.Font = font;
+
+            // Применяем шрифт к Button
+            buttonCalculate.Font = font;
         }
 
         private void buttonCalculate_Click(object sender, EventArgs e)

@@ -18,10 +18,33 @@ namespace MedicalReference
         {
             InitializeComponent();
             LoadDiseases();
+            ApplyFontToControls(AppSettings.AppFont);
             listBoxSearchHistory.Visible = false;
             buttonBackToDiseases.Visible = false;
-        }
 
+        }
+        private void buttonFontEditor_Click(object sender, EventArgs e)
+        {
+            // Создаем и открываем форму редактора шрифтов
+            FontEditorForm fontEditorForm = new FontEditorForm();
+            if (fontEditorForm.ShowDialog() == DialogResult.OK)
+            {
+                // Применяем выбранный шрифт ко всем элементам управления на главной форме
+                ApplyFontToControls(AppSettings.AppFont);
+
+                // Сообщаем пользователю, что шрифт изменен
+                MessageBox.Show("Шрифт успешно изменен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void ApplyFontToControls(Font font)
+        {
+            // Применяем шрифт к ListBox
+            listBoxDiseases.Font = font;
+
+            // Применяем шрифт к TextBox (если есть)
+            textBoxSearchSymptoms.Font = font;
+
+        }
         private void LoadDiseases()
         {
             try

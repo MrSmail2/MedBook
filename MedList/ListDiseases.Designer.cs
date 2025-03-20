@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.listBoxDiseases = new System.Windows.Forms.ListBox();
             this.textBoxSearchSymptoms = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -36,9 +37,10 @@
             this.аЯToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.яАToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.калькуляторИМТToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.историяПоискаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBoxSearchHistory = new System.Windows.Forms.ListBox();
             this.buttonBackToDiseases = new System.Windows.Forms.Button();
-            this.историяПоискаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.шрифтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,10 +80,11 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сортировкаToolStripMenuItem,
             this.калькуляторИМТToolStripMenuItem,
-            this.историяПоискаToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(581, 9);
+            this.историяПоискаToolStripMenuItem,
+            this.шрифтToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(403, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(319, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(497, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -97,14 +100,14 @@
             // аЯToolStripMenuItem
             // 
             this.аЯToolStripMenuItem.Name = "аЯToolStripMenuItem";
-            this.аЯToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.аЯToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.аЯToolStripMenuItem.Text = "А-Я";
             this.аЯToolStripMenuItem.Click += new System.EventHandler(this.buttonSortAZ_Click);
             // 
             // яАToolStripMenuItem
             // 
             this.яАToolStripMenuItem.Name = "яАToolStripMenuItem";
-            this.яАToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.яАToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.яАToolStripMenuItem.Text = "Я-А";
             this.яАToolStripMenuItem.Click += new System.EventHandler(this.buttonSortZA_Click);
             // 
@@ -114,6 +117,13 @@
             this.калькуляторИМТToolStripMenuItem.Size = new System.Drawing.Size(118, 20);
             this.калькуляторИМТToolStripMenuItem.Text = "Калькулятор ИМТ";
             this.калькуляторИМТToolStripMenuItem.Click += new System.EventHandler(this.buttonBMICalculator_Click);
+            // 
+            // историяПоискаToolStripMenuItem
+            // 
+            this.историяПоискаToolStripMenuItem.Name = "историяПоискаToolStripMenuItem";
+            this.историяПоискаToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
+            this.историяПоискаToolStripMenuItem.Text = "История поиска";
+            this.историяПоискаToolStripMenuItem.Click += new System.EventHandler(this.buttonShowHistory_Click);
             // 
             // listBoxSearchHistory
             // 
@@ -133,12 +143,12 @@
             this.buttonBackToDiseases.UseVisualStyleBackColor = true;
             this.buttonBackToDiseases.Click += new System.EventHandler(this.buttonBackToDiseases_Click);
             // 
-            // историяПоискаToolStripMenuItem
+            // шрифтToolStripMenuItem
             // 
-            this.историяПоискаToolStripMenuItem.Name = "историяПоискаToolStripMenuItem";
-            this.историяПоискаToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
-            this.историяПоискаToolStripMenuItem.Text = "История поиска";
-            this.историяПоискаToolStripMenuItem.Click += new System.EventHandler(this.buttonShowHistory_Click);
+            this.шрифтToolStripMenuItem.Name = "шрифтToolStripMenuItem";
+            this.шрифтToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.шрифтToolStripMenuItem.Text = "Шрифт";
+            this.шрифтToolStripMenuItem.Click += new System.EventHandler(this.buttonFontEditor_Click);
             // 
             // MainForm
             // 
@@ -151,6 +161,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.listBoxSearchHistory);
             this.Controls.Add(this.listBoxDiseases);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Список болезней";
@@ -174,6 +185,7 @@
         private System.Windows.Forms.ListBox listBoxSearchHistory;
         private System.Windows.Forms.Button buttonBackToDiseases;
         private System.Windows.Forms.ToolStripMenuItem историяПоискаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem шрифтToolStripMenuItem;
     }
 }
 

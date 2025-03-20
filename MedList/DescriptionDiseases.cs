@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MedList;
+using System;
+using System.Drawing;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
 
@@ -14,8 +16,15 @@ namespace MedicalReference
 
             textBoxDiseaseInfo.ReadOnly = true;
             textBoxDiseaseInfo.HideSelection = true;
-        }
 
+            ApplyFontToControls(AppSettings.AppFont);
+        }
+        private void ApplyFontToControls(Font font)
+        {
+            // Применяем шрифт к textBoxDiseaseInfo
+            textBoxDiseaseInfo.Font = font;
+
+        }
         // Метод для установки данных о болезни
         public void SetDiseaseInfo(string aboutDisease, string symptoms, string treatment)
         {
