@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FontEditorForm));
             this.comboBoxFont = new System.Windows.Forms.ComboBox();
             this.comboBoxSize = new System.Windows.Forms.ComboBox();
             this.checkBoxBold = new System.Windows.Forms.CheckBox();
@@ -91,6 +92,7 @@
             this.Controls.Add(this.checkBoxBold);
             this.Controls.Add(this.comboBoxSize);
             this.Controls.Add(this.comboBoxFont);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FontEditorForm";
             this.Text = "FontEditor";
             this.ResumeLayout(false);

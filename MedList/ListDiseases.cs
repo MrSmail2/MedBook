@@ -23,6 +23,12 @@ namespace MedicalReference
             buttonBackToDiseases.Visible = false;
 
         }
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            // Создаем и открываем форму "Справка"
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.ShowDialog();
+        }
         private void buttonFontEditor_Click(object sender, EventArgs e)
         {
             // Создаем и открываем форму редактора шрифтов
@@ -110,10 +116,14 @@ namespace MedicalReference
             // Очищаем ListBox перед поиском
             listBoxDiseases.Items.Clear();
 
-            // Ищем болезни, у которых симптомы содержат введенный текст
+            // Ищем болезни, у которых симптомы или название содержат введенный текст
             foreach (var disease in diseases)
             {
-                if (disease.DiseaseData.Symptoms != null && disease.DiseaseData.Symptoms.ToLower().Contains(searchText))
+                bool matchesName = disease.DiseaseName.ToLower().Contains(searchText); // Поиск по названию
+                bool matchesSymptoms = disease.DiseaseData.Symptoms != null &&
+                                       disease.DiseaseData.Symptoms.ToLower().Contains(searchText); // Поиск по симптомам
+
+                if (matchesName || matchesSymptoms)
                 {
                     listBoxDiseases.Items.Add(disease.DiseaseName);
                 }

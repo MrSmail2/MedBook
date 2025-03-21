@@ -59,6 +59,6 @@ namespace MedList
     }
     public static class AppSettings
     {
-        public static Font AppFont { get; set; } = new Font("Segoe UI", 12); // Шрифт по умолчанию
+        public static Font AppFont { get; set; } = new Font("Segoe UI", 8); // Шрифт по умолчанию
     }
 }
