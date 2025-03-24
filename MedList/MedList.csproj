@@ -140,6 +140,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Zabolevania\zabolevania_space.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Zabolevania\zabolevania.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

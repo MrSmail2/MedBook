@@ -55,7 +55,7 @@ namespace MedicalReference
         {
             try
             {
-                string path = Path.Combine("Zabolevania", "zabolevania.json");
+                string path = Path.Combine("Zabolevania", "zabolevania_space.json");
 
                 // Проверяем, существует ли файл
                 if (!File.Exists(path))

@@ -39,9 +39,9 @@
             this.калькуляторИМТToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.историяПоискаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.шрифтToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBoxSearchHistory = new System.Windows.Forms.ListBox();
             this.buttonBackToDiseases = new System.Windows.Forms.Button();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,9 +84,9 @@
             this.историяПоискаToolStripMenuItem,
             this.шрифтToolStripMenuItem,
             this.справкаToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(338, 9);
+            this.menuStrip1.Location = new System.Drawing.Point(458, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(562, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(442, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -134,8 +134,18 @@
             this.шрифтToolStripMenuItem.Text = "Шрифт";
             this.шрифтToolStripMenuItem.Click += new System.EventHandler(this.buttonFontEditor_Click);
             // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.справкаToolStripMenuItem.Text = "Справка";
+            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.buttonAbout_Click);
+            // 
             // listBoxSearchHistory
             // 
+            this.listBoxSearchHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxSearchHistory.FormattingEnabled = true;
             this.listBoxSearchHistory.Location = new System.Drawing.Point(-1, 37);
             this.listBoxSearchHistory.Name = "listBoxSearchHistory";
@@ -151,13 +161,6 @@
             this.buttonBackToDiseases.Text = "Назад";
             this.buttonBackToDiseases.UseVisualStyleBackColor = true;
             this.buttonBackToDiseases.Click += new System.EventHandler(this.buttonBackToDiseases_Click);
-            // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.справкаToolStripMenuItem.Text = "Справка";
-            this.справкаToolStripMenuItem.Click += new System.EventHandler(this.buttonAbout_Click);
             // 
             // MainForm
             // 
