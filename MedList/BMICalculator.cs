@@ -41,6 +41,11 @@ namespace MedList
             dataGridView1.Rows.Add("35-40", "Ожирение второй степени");
             dataGridView1.Rows.Add("40 и более", "Ожирение третьей степени (морбидное)");
 
+            // Запрет изменения размера
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = true; // Можно оставить кнопку "Свернуть"
+
 
 
         }

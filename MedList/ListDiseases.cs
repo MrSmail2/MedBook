@@ -22,6 +22,11 @@ namespace MedicalReference
             listBoxSearchHistory.Visible = false;
             buttonBackToDiseases.Visible = false;
 
+            // Запрет изменения размера
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = true; // Можно оставить кнопку "Свернуть"
+
         }
         private void buttonAbout_Click(object sender, EventArgs e)
         {
@@ -31,15 +36,42 @@ namespace MedicalReference
         }
         private void buttonFontEditor_Click(object sender, EventArgs e)
         {
-            // Создаем и открываем форму редактора шрифтов
-            FontEditorForm fontEditorForm = new FontEditorForm();
-            if (fontEditorForm.ShowDialog() == DialogResult.OK)
-            {
-                // Применяем выбранный шрифт ко всем элементам управления на главной форме
-                ApplyFontToControls(AppSettings.AppFont);
+            fontDialog1.ShowColor = true;
+            fontDialog1.Font = AppSettings.AppFont; // Или Properties.Settings.Default.AppFont
 
-                // Сообщаем пользователю, что шрифт изменен
-                MessageBox.Show("Шрифт успешно изменен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Сохраняем выбранный шрифт
+                AppSettings.AppFont = fontDialog1.Font; // Вариант 1
+                                                        // ИЛИ:
+                                                        // Properties.Settings.Default.AppFont = fontDialog1.Font; // Вариант 2
+                                                        // Properties.Settings.Default.Save(); // Сохраняем настройки
+
+                // Применяем шрифт ко всем открытым формам
+                ApplyFontToAllForms(fontDialog1.Font);
+            }
+        }
+        // Метод для применения шрифта ко всем формам
+        private void ApplyFontToAllForms(Font newFont)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                form.Font = newFont;
+                // Если нужно обновить шрифт вложенных элементов:
+                UpdateControlsFont(form.Controls, newFont);
+            }
+        }
+
+        // Рекурсивное обновление шрифта у всех элементов управления
+        private void UpdateControlsFont(Control.ControlCollection controls, Font newFont)
+        {
+            foreach (Control control in controls)
+            {
+                control.Font = newFont;
+                if (control.HasChildren)
+                {
+                    UpdateControlsFont(control.Controls, newFont);
+                }
             }
         }
         private void ApplyFontToControls(Font font)

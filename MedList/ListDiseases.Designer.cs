@@ -42,6 +42,7 @@
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBoxSearchHistory = new System.Windows.Forms.ListBox();
             this.buttonBackToDiseases = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -199,6 +200,7 @@
         private System.Windows.Forms.ToolStripMenuItem историяПоискаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem шрифтToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
 

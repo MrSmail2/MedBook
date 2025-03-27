@@ -12,6 +12,11 @@ namespace MedicalReference
         {
             InitializeComponent();
 
+            // Запрет изменения размера
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = true; // Можно оставить кнопку "Свернуть"
+
             this.Text = diseaseName;
 
             textBoxDiseaseInfo.ReadOnly = true;

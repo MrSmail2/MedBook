@@ -16,6 +16,10 @@ namespace MedList
         {
             InitializeComponent();
             ApplyFontToControls(AppSettings.AppFont);
+            // Запрет изменения размера
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = true; // Можно оставить кнопку "Свернуть"
 
             // Устанавливаем текст с информацией
             labelAuthorInfo.Text = @"
