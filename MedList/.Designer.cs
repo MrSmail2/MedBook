@@ -37,17 +37,17 @@
             // labelAuthorInfo
             // 
             this.labelAuthorInfo.AutoSize = true;
-            this.labelAuthorInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelAuthorInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelAuthorInfo.Location = new System.Drawing.Point(110, 52);
             this.labelAuthorInfo.Name = "labelAuthorInfo";
-            this.labelAuthorInfo.Size = new System.Drawing.Size(79, 29);
+            this.labelAuthorInfo.Size = new System.Drawing.Size(60, 24);
             this.labelAuthorInfo.TabIndex = 0;
             this.labelAuthorInfo.Text = "label1";
             // 
             // back
             // 
             this.back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.back.Location = new System.Drawing.Point(576, 383);
+            this.back.Location = new System.Drawing.Point(928, 544);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(165, 36);
             this.back.TabIndex = 1;
@@ -58,10 +58,10 @@
             // labelProjectInfo
             // 
             this.labelProjectInfo.AutoSize = true;
-            this.labelProjectInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelProjectInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelProjectInfo.Location = new System.Drawing.Point(110, 191);
             this.labelProjectInfo.Name = "labelProjectInfo";
-            this.labelProjectInfo.Size = new System.Drawing.Size(79, 29);
+            this.labelProjectInfo.Size = new System.Drawing.Size(60, 24);
             this.labelProjectInfo.TabIndex = 2;
             this.labelProjectInfo.Text = "label1";
             // 
@@ -69,7 +69,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(1154, 605);
             this.Controls.Add(this.labelProjectInfo);
             this.Controls.Add(this.back);
             this.Controls.Add(this.labelAuthorInfo);

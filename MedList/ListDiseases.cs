@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace MedicalReference
 {
-    public partial class MainForm : Form
+    public partial class MainForm : AutoScaleForm
     {
         private List<Disease> diseases;
         private List<SearchHistoryItem> searchHistory = new List<SearchHistoryItem>(); // История поиска
@@ -18,8 +18,22 @@ namespace MedicalReference
         {
             InitializeComponent();
             LoadDiseases();
-            ApplyFontToControls(AppSettings.AppFont);
-            listBoxSearchHistory.Visible = false;
+
+            this.Font = AppSettings.DefaultFont;
+
+            this.WindowState = FormWindowState.Maximized;
+
+
+            DesignSize = new Size(1280, 720);
+
+            // Настройка полноэкранного режима
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            // Улучшаем производительность для сложных форм
+            this.DoubleBuffered = true;
+
+            //listBoxSearchHistory.Visible = false;
             buttonBackToDiseases.Visible = false;
 
             // Запрет изменения размера
@@ -34,55 +48,7 @@ namespace MedicalReference
             AboutForm aboutForm = new AboutForm();
             aboutForm.ShowDialog();
         }
-        private void buttonFontEditor_Click(object sender, EventArgs e)
-        {
-            fontDialog1.ShowColor = true;
-            fontDialog1.Font = AppSettings.AppFont; // Или Properties.Settings.Default.AppFont
-
-            if (fontDialog1.ShowDialog() == DialogResult.OK)
-            {
-                // Сохраняем выбранный шрифт
-                AppSettings.AppFont = fontDialog1.Font; // Вариант 1
-                                                        // ИЛИ:
-                                                        // Properties.Settings.Default.AppFont = fontDialog1.Font; // Вариант 2
-                                                        // Properties.Settings.Default.Save(); // Сохраняем настройки
-
-                // Применяем шрифт ко всем открытым формам
-                ApplyFontToAllForms(fontDialog1.Font);
-            }
-        }
-        // Метод для применения шрифта ко всем формам
-        private void ApplyFontToAllForms(Font newFont)
-        {
-            foreach (Form form in Application.OpenForms)
-            {
-                form.Font = newFont;
-                // Если нужно обновить шрифт вложенных элементов:
-                UpdateControlsFont(form.Controls, newFont);
-            }
-        }
-
-        // Рекурсивное обновление шрифта у всех элементов управления
-        private void UpdateControlsFont(Control.ControlCollection controls, Font newFont)
-        {
-            foreach (Control control in controls)
-            {
-                control.Font = newFont;
-                if (control.HasChildren)
-                {
-                    UpdateControlsFont(control.Controls, newFont);
-                }
-            }
-        }
-        private void ApplyFontToControls(Font font)
-        {
-            // Применяем шрифт к ListBox
-            listBoxDiseases.Font = font;
-
-            // Применяем шрифт к TextBox (если есть)
-            textBoxSearchSymptoms.Font = font;
-
-        }
+       
         private void LoadDiseases()
         {
             try
@@ -250,7 +216,7 @@ namespace MedicalReference
             buttonBackToDiseases.Visible = true;
 
             // Очищаем ListBox с историей поиска
-            listBoxSearchHistory.Items.Clear();
+           listBoxSearchHistory.Items.Clear();
 
             // Добавляем историю поиска в ListBox
             foreach (var item in searchHistory)

@@ -15,7 +15,7 @@ namespace MedList
         public AboutForm()
         {
             InitializeComponent();
-            ApplyFontToControls(AppSettings.AppFont);
+         //   ApplyFontToControls(AppSettings.AppFont);
             // Запрет изменения размера
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -32,7 +32,7 @@ namespace MedList
 Описание Курсового проекта:
 Руководитель: Иванов А. Э.
 Тема: Разработка приложения 'Медицинский справочник'
-Краткое описание: Медицинский справочник — это приложение, которое позволяет пользователю
+Краткое описание: медицинский справочник — это приложение, которое позволяет пользователю
 искать информацию о болезнях, их симптомах и лечении. Также в приложении
 реализован калькулятор индекса массы тела (ИМТ) и возможность изменения
 шрифта интерфейса.

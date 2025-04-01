@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,10 +26,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -68,18 +68,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="autoscale.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BMICalculator.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BMICalculator.Designer.cs">
       <DependentUpon>BMICalculator.cs</DependentUpon>
     </Compile>
-    <Compile Include="FontEditorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FontEditorForm.Designer.cs">
-      <DependentUpon>FontEditorForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Font.cs" />
     <Compile Include="Reference.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,9 +101,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BMICalculator.resx">
       <DependentUpon>BMICalculator.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FontEditorForm.resx">
-      <DependentUpon>FontEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListDiseases.resx">
       <DependentUpon>ListDiseases.cs</DependentUpon>
@@ -148,6 +143,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="deleted\TextFile1.txt" />
     <Content Include="icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

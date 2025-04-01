@@ -6,12 +6,30 @@ using System.Windows.Forms;
 
 namespace MedicalReference
 {
-    public partial class DiseaseDetailsForm : Form
+    public partial class DiseaseDetailsForm : AutoScaleForm
     {
         public DiseaseDetailsForm(string diseaseName)
         {
             InitializeComponent();
 
+            this.WindowState = FormWindowState.Maximized;
+
+
+            DesignSize = new Size(1280, 720);
+
+            // Настройка полноэкранного режима
+            this.WindowState = FormWindowState.Maximized;
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            // Улучшаем производительность для сложных форм
+            this.DoubleBuffered = true;
+
+            
+
+            // Запрет изменения размера
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = true; // Можно оставить кнопку "Свернуть"
             // Запрет изменения размера
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -22,7 +40,7 @@ namespace MedicalReference
             textBoxDiseaseInfo.ReadOnly = true;
             textBoxDiseaseInfo.HideSelection = true;
 
-            ApplyFontToControls(AppSettings.AppFont);
+            //ApplyFontToControls(AppSettings.AppFont);
         }
         private void ApplyFontToControls(Font font)
         {
@@ -55,6 +73,7 @@ namespace MedicalReference
 
             // Устанавливаем текст в TextBox
             textBoxDiseaseInfo.Text = diseaseInfo;
+            textBoxDiseaseInfo.BackColor = SystemColors.Window;
 
             textBoxDiseaseInfo.SelectionStart = 0; // Устанавливаем курсор в начало
             textBoxDiseaseInfo.SelectionLength = 0; // Сбрасываем выделение

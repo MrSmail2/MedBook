@@ -34,11 +34,12 @@
             // 
             // textBoxDiseaseInfo
             // 
-            this.textBoxDiseaseInfo.Location = new System.Drawing.Point(-1, 1);
+            this.textBoxDiseaseInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxDiseaseInfo.Location = new System.Drawing.Point(0, 0);
             this.textBoxDiseaseInfo.Multiline = true;
             this.textBoxDiseaseInfo.Name = "textBoxDiseaseInfo";
             this.textBoxDiseaseInfo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDiseaseInfo.Size = new System.Drawing.Size(800, 448);
+            this.textBoxDiseaseInfo.Size = new System.Drawing.Size(800, 450);
             this.textBoxDiseaseInfo.TabIndex = 0;
             // 
             // DiseaseDetailsForm

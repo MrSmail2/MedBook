@@ -13,33 +13,14 @@ namespace MedList
 {
     public partial class BMICalculatorForm : Form
     {
+     
         public BMICalculatorForm()
         {
             InitializeComponent();
 
-            ApplyFontToControls(AppSettings.AppFont);
+           // ApplyFontToControls(AppSettings.AppFont);
 
-            dataGridView1.ReadOnly = true;
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.ColumnHeadersVisible = false; // Скрыть заголовки столбцов
-            dataGridView1.BorderStyle = BorderStyle.None; // Убрать границу таблицы
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            // Добавление столбцов
-            dataGridView1.Columns.Add("Column1", "Индекс массы тела");
-            dataGridView1.Columns.Add("Column2", "Соответствие между массой человека и его ростом");
-
-            // Добавление столбцов
-            dataGridView1.Rows.Add("16 и менее", "Выраженный дефицит массы тела");
-            dataGridView1.Rows.Add("16-18,5", "Недостаточная (дефицит) масса тела");
-            dataGridView1.Rows.Add("18,5-25", "Норма");
-            dataGridView1.Rows.Add("25-30", "Избыточная масса тела (предожирение)");
-            dataGridView1.Rows.Add("30-35", "Ожирение первой степени");
-            dataGridView1.Rows.Add("35-40", "Ожирение второй степени");
-            dataGridView1.Rows.Add("40 и более", "Ожирение третьей степени (морбидное)");
+            
 
             // Запрет изменения размера
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
