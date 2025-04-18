@@ -42,12 +42,7 @@ namespace MedicalReference
 
             //ApplyFontToControls(AppSettings.AppFont);
         }
-        private void ApplyFontToControls(Font font)
-        {
-            // Применяем шрифт к textBoxDiseaseInfo
-            textBoxDiseaseInfo.Font = font;
-
-        }
+        
         // Метод для установки данных о болезни
         public void SetDiseaseInfo(string aboutDisease, string symptoms, string treatment)
         {

@@ -102,7 +102,7 @@
             this.Controls.Add(this.textBoxWeight);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BMICalculatorForm";
-            this.Text = "Form1";
+            this.Text = "Калькулятор ИМТ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
